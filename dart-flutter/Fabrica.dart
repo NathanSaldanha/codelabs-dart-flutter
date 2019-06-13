@@ -1,0 +1,39 @@
+import 'dart:math';
+
+abstract class Shape {
+  factory Shape(String type) {
+    if (type == 'circle') return Circle(2);
+    if (type == 'square') return Square(2);
+    throw 'Can\'t create $type.';
+  }
+  num get area;
+}
+
+class Circle implements Shape {
+  final num radius;
+  Circle(this.radius);
+  num get area => pi * pow(radius, 2);
+}
+
+class Square implements Shape {
+  final num side;
+  Square(this.side);
+  num get area => pow(side, 2);
+}
+
+//////////Funçao Nivel Superior//////
+//Shape shapeFactory(String type) {
+// if (type == 'circle') return Circle(2);
+// if (type == 'square') return Square(2);
+// throw 'Can\'t create $type.';
+//}
+
+void main() {
+  ////Nivel superio///
+  // final circle = shapeFactory('circle');
+  //final square = shapeFactory('square');
+  final circle = Shape('circle');
+  final square = Shape('square');
+  print(circle.area);
+  print(square.area);
+}
