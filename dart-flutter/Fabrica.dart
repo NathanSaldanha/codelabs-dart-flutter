@@ -21,17 +21,12 @@ class Square implements Shape {
   num get area => pow(side, 2);
 }
 
-//////////Funçao Nivel Superior//////
-//Shape shapeFactory(String type) {
-// if (type == 'circle') return Circle(2);
-// if (type == 'square') return Square(2);
-// throw 'Can\'t create $type.';
-//}
+class CircleMock implements Circle {
+  num area;
+  num radius;
+}
 
-void main() {
-  ////Nivel superio///
-  // final circle = shapeFactory('circle');
-  //final square = shapeFactory('square');
+main() {
   final circle = Shape('circle');
   final square = Shape('square');
   print(circle.area);
